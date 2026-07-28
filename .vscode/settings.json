@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.customLabels.patterns": {
+    "**/routes/**/+page.svelte": "${dirname(1)}/${dirname}",
+    "**/routes/**/+page.server.ts": "/${dirname} [server]",
+    "**/app/**/page.tsx": "${dirname}.${extname}",
+    "**/app/**/layout.tsx": "${dirname}/layout.${extname}"
+  },
+  "biome.enabled": false
+}
