@@ -9,7 +9,8 @@ A small, opinionated Next.js starter with a feature-based architecture and an MD
 - Tailwind CSS 4 and daisyUI 5
 - Light and dark themes with `next-themes`
 - Nextra-powered MDX posts and Pagefind indexing
-- ESLint and Prettier
+- Vitest for unit tests
+- React Testing Library, ESLint, and Prettier
 - Repository guidance for coding agents
 
 ## Start the app
@@ -55,6 +56,12 @@ The filename becomes the route under `/blog`.
 pnpm dev       # Start the development server
 pnpm build     # Build the app and generate the Pagefind index
 pnpm start     # Serve the production build
+pnpm test      # Run unit tests once
+pnpm test:watch # Run unit tests in watch mode
 pnpm lint      # Run ESLint
 pnpm format    # Format the repository
 ```
+
+## Agent guidance
+
+Repository conventions live in `AGENTS.md`, with focused references for [frontend design](.agents/frontend-design.instructions.AGENTS.md), [Next.js 16](.agents/nextjs-16.instructions.AGENTS.md), and [Tailwind CSS 4](.agents/tailwind4-instructions.AGENTS.md).

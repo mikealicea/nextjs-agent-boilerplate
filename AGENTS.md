@@ -14,9 +14,10 @@ Never commit secrets or place credentials in source.
 
 ## Definition of Done
 
-Before claiming a task complete, run these commands and confirm that both exit successfully:
+Before claiming a task complete, run these commands and confirm that all exit successfully:
 
 ```bash
+pnpm test
 pnpm run lint
 pnpm run format
 ```
@@ -28,6 +29,8 @@ pnpm run build
 ```
 
 ## Architecture
+
+Read `.agents/nextjs-16.instructions.AGENTS.md` before adding routes or changing Next.js 16 App Router code.
 
 ### Server-first
 
@@ -96,9 +99,13 @@ Prefer children and app-shell composition over deep prop chains. Keep third-part
 - `next-themes`
 - Nextra MDX and Nextra Blog styles
 - Pagefind
+- Vitest
+- React Testing Library
 - pnpm
 
 ## Styling and themes
+
+Read `.agents/frontend-design.instructions.AGENTS.md` before designing or substantially changing pages or components.
 
 Read `.agents/tailwind4-instructions.AGENTS.md` before changing Tailwind CSS.
 
@@ -114,14 +121,30 @@ Posts live in `src/content` as MDX and require `title` and ISO-formatted `date` 
 
 Nextra loads custom MDX components through the Turbopack alias in `next.config.ts`. Keep that alias synchronized if the MDX component file moves.
 
+## Testing
+
+Co-locate unit and rendered component tests with their feature using `.test.ts` or `.test.tsx`. Use React Testing Library queries that reflect how users and assistive technology find the interface. Mock external framework and content boundaries, not the component behavior under test.
+
+Keep `app/` limited to routing files; page rendering tests belong with the feature that supplies the page UI.
+
 ## Workflows
 
 ```bash
 pnpm dev
 pnpm build
 pnpm start
+pnpm test
+pnpm test:watch
 pnpm lint
 pnpm format
 ```
 
 ESLint uses flat configuration. Prettier sorts Tailwind utility classes through `prettier-plugin-tailwindcss`.
+
+## Additional references
+
+| File                                             | Read before                                              |
+| ------------------------------------------------ | -------------------------------------------------------- |
+| `.agents/frontend-design.instructions.AGENTS.md` | Designing or substantially changing pages and components |
+| `.agents/nextjs-16.instructions.AGENTS.md`       | Adding routes or changing App Router code                |
+| `.agents/tailwind4-instructions.AGENTS.md`       | Changing Tailwind CSS or theme configuration             |

@@ -3,6 +3,7 @@ import type { BlogPostMetadata } from "./blog.types";
 
 export function formatDate(date: Date) {
   return new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC",
     month: "short",
     day: "numeric",
     year: "numeric",
